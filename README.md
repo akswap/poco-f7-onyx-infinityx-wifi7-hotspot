@@ -10,7 +10,7 @@ Verified Magisk module enabling real **Wi-Fi 7 (802.11be)** and **6 GHz SoftAP**
 - Protocol: 802.11be
 - Band: 6 GHz
 - ACS channel: 133
-- Link speed: 3843/3843 Mbps
+- Link speed: 5188/5188 Mbps
 - Security: WPA3-Personal
 - Maximum channel bandwidth: 320 MHz enabled
 - Client: Intel Wi-Fi 7 BE200 320 MHz
