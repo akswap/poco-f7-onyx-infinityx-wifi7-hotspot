@@ -65,6 +65,30 @@ Current stable version: **v1.0.0**. The earlier `v0.4-test` release is retained 
 4. Reboot.
 5. Use WPA3-Personal for 6 GHz operation.
 
+## Optional: 6 GHz low range / low speed fix
+
+If the 6 GHz hotspot works but has **low range, unstable speed, or reports only `8.00 dBm` TX power** after hotspot OFF/ON, install the optional TX Auto module:
+
+**[Download POCO-F7-6GHz-Hotspot-TX-Auto-v1.0.0.zip](https://github.com/akswap/poco-f7-onyx-infinityx-wifi7-hotspot/releases/tag/v1.0.0-tx-auto)**
+
+This optional module:
+
+- Detects the active SoftAP interface dynamically.
+- Runs only when the hotspot is operating on 6 GHz.
+- Reapplies driver-controlled `iw dev <interface> set txpower auto` when the reported power is stuck in the low-power state.
+- Does not change 2.4/5 GHz hotspot power, country code, SAR, WCNSS files, overlays, or the Settings APK.
+- Restored the tested POCO F7 hotspot from a reported `8.00 dBm` to `24.00 dBm` after hotspot restarts.
+
+After installation and reboot, start the 6 GHz hotspot, wait 5–10 seconds, then verify:
+
+```sh
+iw dev wlan1 info
+```
+
+The AP interface may use a different name; run `iw dev` to identify the interface whose type is `AP`.
+
+> **Note:** Install this add-on only if you have the low-range/8 dBm issue. The value reported by `iw` is a driver setting, not proof of actual EIRP. Firmware, regulatory rules, antenna gain, thermal policy, and hardware power class may impose lower limits. Use only where permitted by local regulations.
+
 ## Verification
 
 Run as root:
