@@ -1,4 +1,4 @@
-# POCO F7 (onyx) Wi-Fi 7 + 6 GHz Hotspot
+# POCO F7 (onyx) Wi-Fi 7 + 6 GHz Hotspot (Magisk Module)
 
 
 Verified Magisk module enabling real **Wi-Fi 7 (802.11be)** and **6 GHz SoftAP** on the POCO F7 (`onyx`) running Project Infinity-X 3.12 with the Global `OS3.0.302.0.WOLMIXM` vendor.
