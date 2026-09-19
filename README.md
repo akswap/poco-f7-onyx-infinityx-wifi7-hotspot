@@ -4,7 +4,7 @@ Verified Magisk module enabling real **Wi-Fi 7 (802.11be)**, standalone **6 GHz 
 
 ## Verified result
 
-- Protocol: 802.11be
+- Protocol: 802.11be (WiFi 7)
 - Band: 6 GHz
 - ACS hotspot channel: 133
 - Observed hotspot client link speed: 5188/5188 Mbps
@@ -87,7 +87,7 @@ iw reg get
 dumpsys wifi | grep -E "SupportedChannelListIn6g|mCurrentSoftApInfoMap"
 ```
 
-A connected Wi-Fi 7 client should report `802.11be`.
+A connected Wi-Fi 7 client should report `802.11be`. (WiFi 7)
 
 ## Rollback
 
