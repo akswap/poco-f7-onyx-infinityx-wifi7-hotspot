@@ -69,7 +69,7 @@ Current stable version: **v1.0.0**. The earlier `v0.4-test` release is retained 
 
 If the 6 GHz hotspot works but has **low range, unstable speed, or reports only `8.00 dBm` TX power** after hotspot OFF/ON, install the optional TX Auto module:
 
-**[Download POCO-F7-6GHz-Hotspot-TX-Auto-v1.0.0.zip](https://github.com/akswap/poco-f7-onyx-infinityx-wifi7-hotspot/releases/tag/v1.0.0-tx-auto)**
+**[Download POCO-F7-6GHz-Hotspot-TX-Auto-v1.0.0.zip](https://github.com/akswap/poco-f7-onyx-infinityx-wifi7-hotspot/releases/download/v1.0.0-tx-auto/POCO-F7-6GHz-Hotspot-TX-Auto-v1.0.0.zip)**
 
 This optional module:
 
