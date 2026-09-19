@@ -85,7 +85,7 @@ This is an exact-build module. Do not install it on another device, vendor build
 
 
 1. Root the exact target build with Magisk.
-2. Remove or disable older standalone Wi-Fi 7 RRO/hostapd test modules.
-3. Install `POCO-F7-WiFi7-6GHz-US-ACS-v0.4-test.zip` in Magisk.
+2. Install `POCO-F7-WiFi7-6GHz-US-ACS-v0.4-test.zip` in Magisk.
+3. set device Region United States
 4. Reboot.
 5. Use WPA3-Personal for 6 GHz hotspot operation.
