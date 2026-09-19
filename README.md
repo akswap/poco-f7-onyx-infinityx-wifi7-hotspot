@@ -1,17 +1,23 @@
 # POCO F7 (onyx) Wi-Fi 7 + 6 GHz Hotspot
 
+
 Verified Magisk module enabling real **Wi-Fi 7 (802.11be)** and **6 GHz SoftAP** on the POCO F7 (`onyx`) running Project Infinity-X 3.12 with the Global `OS3.0.302.0.WOLMIXM` vendor.
 
+
 ## Verified result
+
 
 - Protocol: 802.11be
 - Band: 6 GHz
 - ACS channel: 133
 - Link speed: 3843/3843 Mbps
 - Security: WPA3-Personal
+- Maximum channel bandwidth: 320 MHz enabled
 - Client: Intel Wi-Fi 7 BE200 320 MHz
 
+
 ## Exact target
+
 
 - Device: POCO F7
 - Codename: `onyx`
@@ -20,11 +26,15 @@ Verified Magisk module enabling real **Wi-Fi 7 (802.11be)** and **6 GHz SoftAP**
 - Vendor: `OS3.0.302.0.WOLMIXM`
 - EHT hostapd source: Xiaomi.eu `OS3.0.305.0.WOLCNXM`
 
+
 This is an exact-build module. Do not install it on another device, vendor build, or ROM unless the compatibility checks are updated.
+
 
 ## What the module changes
 
+
 - Enables Android Wi-Fi 7 and 6 GHz framework/SoftAP resource gates.
+- Enables up to 320 MHz channel bandwidth where supported by the band, firmware, regulatory domain, and client.
 - Systemlessly supplies the EHT-capable Xiaomi.eu hostapd and its versioned AIDL libraries.
 - Systemlessly copies the installed WCNSS configuration and sets:
   - `BandCapability=7`
@@ -33,7 +43,9 @@ This is an exact-build module. Do not install it on another device, vendor build
 - Applies a US country-code override after boot so ACS can expose 6 GHz channels.
 - Leaves the physical vendor partition untouched.
 
+
 ## Installation
+
 
 1. Root the exact target build with Magisk.
 2. Remove or disable older standalone Wi-Fi 7 RRO/hostapd test modules.
@@ -41,52 +53,24 @@ This is an exact-build module. Do not install it on another device, vendor build
 4. Reboot.
 5. Use WPA3-Personal for 6 GHz hotspot operation.
 
+
 ## Verification
 
+
 Run as root:
+
 
 ```sh
 cmd overlay lookup --user 0 com.android.wifi.resources \
 com.android.wifi.resources:bool/config_wifi6ghzSupport
 
+
 cmd overlay lookup --user 0 com.android.wifi.resources \
 com.android.wifi.resources:bool/config_wifiSoftap6ghzSupported
+
 
 cmd overlay lookup --user 0 com.android.wifi.resources \
 com.android.wifi.resources:bool/config_wifiSoftapIeee80211beSupported
 
+
 cmd overlay lookup --user 0 com.android.wifi.resources \
-com.android.wifi.resources:bool/config_wifi11beSupportOverride
-
-cmd wifi get-country-code
-iw reg get
-dumpsys wifi | grep -E "SupportedChannelListIn6g|mCurrentSoftApInfoMap"
-```
-
-A connected Wi-Fi 7 client should report `802.11be`.
-
-## Rollback
-
-Disable or remove the module in Magisk and reboot. The physical vendor partition is not modified.
-
-## Important warning
-
-The module applies a US regulatory-domain override for controlled testing. Wireless spectrum rules vary by country. Use only where the selected channels and power levels are legally permitted. The module is experimental and provided without warranty.
-
-This release contains proprietary vendor binaries extracted from a user-owned Xiaomi.eu ROM for interoperability testing. No ownership is claimed; redistribution may be subject to the original vendor's terms.
-
-## Download integrity
-
-`POCO-F7-WiFi7-6GHz-US-ACS-v0.4-test.zip`
-
-SHA-256:
-
-```text
-5a03e748f3ea0a4c38b3a3179a41d3203520b1d1f6f330d493213fe47e9ec4a3
-```
-
-## Credits
-
-- Testing and device validation: AKS
-- Android Wi-Fi resources: AOSP
-- EHT hostapd/vendor components: Xiaomi.eu vendor image
