@@ -23,8 +23,8 @@ Verified Magisk module enabling real **Wi-Fi 7 (802.11be)**, standalone **6 GHz 
 
 ### Wi-Fi hotspot
 
-- Wi-Fi 7 (`802.11be`) hotspot verified on the 6 GHz band.
-- ACS selected 6 GHz channel 133.
+- Wi-Fi 7 (`802.11be`) hotspot verified on the 2.4Ghz/5Ghz/6 GHz band.
+- ACS selected 6 GHz channel 37 & 133.
 - Maximum channel bandwidth of 320 MHz is enabled.
 - Android reports `config_wifiSoftap6ghzSupported=true`.
 
@@ -47,7 +47,7 @@ Current stable version: **v1.0.0**. The earlier `v0.4-test` release is retained 
 
 ## What the module changes
 
-- Enables Android Wi-Fi 7 and 6 GHz framework/SoftAP resource gates.
+- Enables Android Wi-Fi 7 and 2.4/5/6 GHz framework/SoftAP resource gates.
 - Enables up to 320 MHz channel bandwidth where supported by the band, firmware, regulatory domain, router, and client.
 - Systemlessly supplies the EHT-capable Xiaomi.eu hostapd and its versioned AIDL libraries.
 - Systemlessly copies the installed WCNSS configuration and sets:
@@ -111,6 +111,6 @@ SHA-256:
 
 ## Credits
 
-- Testing and device validation: AKS
+- Testing and device validation: AKHILESH KUMAR SHUKLA
 - Android Wi-Fi resources: AOSP
 - EHT hostapd/vendor components: Xiaomi.eu vendor image
