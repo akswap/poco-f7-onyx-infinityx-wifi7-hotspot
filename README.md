@@ -1,10 +1,16 @@
 # POCO F7 (onyx) Wi-Fi 7 + 6 GHz Hotspot (Magisk Module)
 
 
+
+
 Verified Magisk module enabling real **Wi-Fi 7 (802.11be)** and **6 GHz SoftAP** on the POCO F7 (`onyx`) running Project Infinity-X 3.12 with the Global `OS3.0.302.0.WOLMIXM` vendor.
 
 
+
+
 ## Verified result
+
+
 
 
 - Protocol: 802.11be
@@ -15,8 +21,29 @@ Verified Magisk module enabling real **Wi-Fi 7 (802.11be)** and **6 GHz SoftAP**
 - Maximum channel bandwidth: 320 MHz enabled
 - Client: Intel Wi-Fi 7 BE200 320 MHz
 
+## Verified operating modes
+
+### Wi-Fi client
+
+- Connected using Wi-Fi 7 (`802.11be`) with WPA3-SAE.
+- MLO established with active 5 GHz (channel 144) and 6 GHz (channel 85) affiliated links.
+- Android reports `config_wifi6ghzSupport=true`.
+
+### Wi-Fi hotspot
+
+- Wi-Fi 7 (`802.11be`) hotspot verified on the 6 GHz band.
+- ACS selected 6 GHz channel 133.
+- Maximum channel bandwidth of 320 MHz is enabled.
+- Android reports `config_wifiSoftap6ghzSupported=true`.
+
+SSID, BSSID, client MAC, and IP details are intentionally omitted from this public verification.
+
+
+
 
 ## Exact target
+
+
 
 
 - Device: POCO F7
@@ -27,10 +54,16 @@ Verified Magisk module enabling real **Wi-Fi 7 (802.11be)** and **6 GHz SoftAP**
 - EHT hostapd source: Xiaomi.eu `OS3.0.305.0.WOLCNXM`
 
 
+
+
 This is an exact-build module. Do not install it on another device, vendor build, or ROM unless the compatibility checks are updated.
 
 
+
+
 ## What the module changes
+
+
 
 
 - Enables Android Wi-Fi 7 and 6 GHz framework/SoftAP resource gates.
@@ -44,7 +77,11 @@ This is an exact-build module. Do not install it on another device, vendor build
 - Leaves the physical vendor partition untouched.
 
 
+
+
 ## Installation
+
+
 
 
 1. Root the exact target build with Magisk.
@@ -52,25 +89,3 @@ This is an exact-build module. Do not install it on another device, vendor build
 3. Install `POCO-F7-WiFi7-6GHz-US-ACS-v0.4-test.zip` in Magisk.
 4. Reboot.
 5. Use WPA3-Personal for 6 GHz hotspot operation.
-
-
-## Verification
-
-
-Run as root:
-
-
-```sh
-cmd overlay lookup --user 0 com.android.wifi.resources \
-com.android.wifi.resources:bool/config_wifi6ghzSupport
-
-
-cmd overlay lookup --user 0 com.android.wifi.resources \
-com.android.wifi.resources:bool/config_wifiSoftap6ghzSupported
-
-
-cmd overlay lookup --user 0 com.android.wifi.resources \
-com.android.wifi.resources:bool/config_wifiSoftapIeee80211beSupported
-
-
-cmd overlay lookup --user 0 com.android.wifi.resources \
