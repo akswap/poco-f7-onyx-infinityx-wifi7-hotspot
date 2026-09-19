@@ -6,7 +6,7 @@ Verified Magisk module enabling real **Wi-Fi 7 (802.11be)**, standalone **6 GHz 
 
 - Protocol: 802.11be (WiFi 7)
 - Band: 6 GHz
-- ACS hotspot channel: 133
+- ACS hotspot channel: 37 & 133
 - Observed hotspot client link speed: 5188/5188 Mbps
 - Security: WPA3-Personal
 - Maximum channel bandwidth: 320 MHz enabled
