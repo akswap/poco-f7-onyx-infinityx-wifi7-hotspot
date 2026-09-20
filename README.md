@@ -62,7 +62,7 @@ Current stable version: **v1.0.1 Camera-Safe**. Version `v1.0.0` is superseded b
 
 1. Root the exact target build with Magisk.
 2. Remove or disable older standalone Wi-Fi 7 RRO/hostapd test modules.
-3. Install `POCO-F7-InfinityX-WiFi7-6GHz-v1.0.1-camera-safe.zip` in Magisk.
+3. Install `POCO-F7-InfinityX-WiFi7-6GHz-v1.0.1-camera-safe-final.zip` in Magisk.
 4. Reboot.
 5. Use WPA3-Personal for 6 GHz operation.
 
@@ -130,7 +130,7 @@ This release contains proprietary vendor binaries extracted from a user-owned Xi
 
 ## Download integrity
 
-`POCO-F7-InfinityX-WiFi7-6GHz-v1.0.1-camera-safe.zip`
+`POCO-F7-InfinityX-WiFi7-6GHz-v1.0.1-camera-safe-final.zip`
 
 SHA-256:
 
