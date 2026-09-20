@@ -7,10 +7,11 @@ Verified camera-safe Magisk module enabling real **Wi-Fi 7 (802.11be)**, standal
 - Protocol: 802.11be (WiFi 7)
 - Band: 6 GHz
 - ACS hotspot channel: 37 & 133
-- Observed hotspot client link speed: 5188/5188 Mbps
+- Observed hotspot client link speed: 5764/5764 Mbps
 - Security: WPA3-Personal
 - Maximum channel bandwidth: 320 MHz enabled
 - Client: Intel Wi-Fi 7 BE200 320 MHz
+<img width="799" height="846" alt="{Intel Wi-Fi 7 BE200 320 MHz}" src="https://github.com/user-attachments/assets/402eef24-4657-447e-97e8-7a37f6ed97f0" />
 
 ## Verified operating modes
 
