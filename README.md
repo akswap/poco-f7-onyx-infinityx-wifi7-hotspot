@@ -1,6 +1,6 @@
 # POCO F7 (onyx) Wi-Fi 7 + 6 GHz Hotspot (Magisk Module)
 
-Verified Magisk module enabling real **Wi-Fi 7 (802.11be)**, standalone **6 GHz Wi-Fi**, **5 GHz + 6 GHz MLO**, and **6 GHz SoftAP** on the POCO F7 (`onyx`) running Project Infinity-X 3.12 with the Global `OS3.0.302.0.WOLMIXM` vendor.
+Verified camera-safe Magisk module enabling real **Wi-Fi 7 (802.11be)**, standalone **6 GHz Wi-Fi**, **5 GHz + 6 GHz MLO**, and **6 GHz SoftAP** on the POCO F7 (`onyx`) running Project Infinity-X 3.12 with the Global `OS3.0.302.0.WOLMIXM` vendor. Camera and hotspot have been verified working together.
 
 ## Verified result
 
@@ -43,13 +43,14 @@ This is an exact-build module. Do not install it on another device, vendor build
 
 ## Stable release
 
-Current stable version: **v1.0.0**. The earlier `v0.4-test` release is retained as the verified development record.
+Current stable version: **v1.0.1 Camera-Safe**. Version `v1.0.0` is superseded because its module-wide `/vendor/lib64` mount could break the camera HAL. The old asset is retained only for debugging/history.
 
 ## What the module changes
 
 - Enables Android Wi-Fi 7 and 2.4/5/6 GHz framework/SoftAP resource gates.
 - Enables up to 320 MHz channel bandwidth where supported by the band, firmware, regulatory domain, router, and client.
-- Systemlessly supplies the EHT-capable Xiaomi.eu hostapd and its versioned AIDL libraries.
+- Systemlessly supplies the EHT-capable Xiaomi.eu hostapd. Its uniquely renamed AIDL dependencies are isolated under `/vendor/etc/wifi/hostapd_miui_libs` and loaded through a hostapd-only RUNPATH.
+- Does **not** create a module `/vendor/lib64` tree, preventing the global vendor-library shadowing that caused the camera to stop.
 - Systemlessly copies the installed WCNSS configuration and sets:
   - `BandCapability=7`
   - `scan_mode_6ghz=1`
@@ -61,7 +62,7 @@ Current stable version: **v1.0.0**. The earlier `v0.4-test` release is retained 
 
 1. Root the exact target build with Magisk.
 2. Remove or disable older standalone Wi-Fi 7 RRO/hostapd test modules.
-3. Install `POCO-F7-WiFi7-6GHz-US-ACS-v1.0.0.zip` in Magisk.
+3. Install `POCO-F7-InfinityX-WiFi7-6GHz-v1.0.1-camera-safe.zip` in Magisk.
 4. Reboot.
 5. Use WPA3-Personal for 6 GHz operation.
 
@@ -88,6 +89,10 @@ iw dev wlan1 info
 The AP interface may use a different name; run `iw dev` to identify the interface whose type is `AP`.
 
 > **Note:** Install this add-on only if you have the low-range/8 dBm issue. The value reported by `iw` is a driver setting, not proof of actual EIRP. Firmware, regulatory rules, antenna gain, thermal policy, and hardware power class may impose lower limits. Use only where permitted by local regulations.
+
+## Camera-safety verification
+
+After reboot, keep Camera open for at least 10–15 seconds, capture a photo, start the hotspot, and repeat the camera test. Both Camera and hotspot were verified working together on the exact target build.
 
 ## Verification
 
@@ -125,12 +130,12 @@ This release contains proprietary vendor binaries extracted from a user-owned Xi
 
 ## Download integrity
 
-`POCO-F7-WiFi7-6GHz-US-ACS-v1.0.0.zip`
+`POCO-F7-InfinityX-WiFi7-6GHz-v1.0.1-camera-safe.zip`
 
 SHA-256:
 
 ```text
-5271d0d6bbc1adedd860308a8d346d9cc06efaf958e6ae2cb7895e28048dc098
+46c122746aac80891b67bdf0257a1732a45a9ba9edcf5924cc846896f823da10
 ```
 
 ## Credits
